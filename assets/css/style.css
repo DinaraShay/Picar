@@ -119,6 +119,7 @@ legend {
     --bck-web-fon: #1B1C20;
     --color-orange: #DB7200;
     --bck-grey: #232428;
+    --border-grey: #2C2E32;
 }
 
 body {
@@ -131,6 +132,7 @@ p {
     line-height: 24px;
     font-size: 16px;
     font-weight: 400;
+    color: #fff;
 }
 
 .main {
@@ -168,11 +170,11 @@ p {
     align-items:center;
 }
 
-.btn-call {
+.btn {
 	display: flex;
 }
 
-.btn-call a {
+.btn a {
     color: #fff;
     font-family: 'Tektur', sans-serif;
     font-size: 16px;
@@ -184,7 +186,7 @@ p {
     gap: 10px;
 }
 
-.btn-call a:after {
+.btn-icon a:after {
     content: '';
     background-image: url(/assets/img/download.svg);
     width: 16px;
@@ -202,6 +204,7 @@ p {
 	display: flex;
 	align-items: center;
 	background-attachment: fixed;
+    background-position: center;
 }
 
 .title--32 {
@@ -309,6 +312,46 @@ p {
     display: flex;
 }
 
+
+
+
+.title--32-border-2 {
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 38.4px;
+	font-family: 'Tektur', sans-serif;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+    margin-top: 70px;
+}
+
+.title--32-border-2::before {
+    content:'';
+    background-image: url(/assets/img/title-left.svg);
+    width: 32px;
+    height: 64px;
+    display: flex;
+}
+
+.title--32-border-2::after {
+    content:'';
+    background-image: url(/assets/img/title-right.svg);
+    width: 32px;
+    height: 64px;
+    display: flex;
+}
+
+.title--32-border-2 p {
+	display: flex;
+	flex-direction: column;
+	font-size: 32px;
+	line-height: 28.8px;
+	font-family: 'Tektur', sans-serif;
+}
+
+
 .block_about-us {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -331,6 +374,7 @@ p {
 	background-color: var(--bck-grey);
 	padding: 34.5px;
 	align-items: flex-start;
+    justify-content: space-between;
 }
 
 .block-advantages-item-info {
@@ -340,18 +384,11 @@ p {
 	gap: 20px;
 }
 
-.block-advantages-item-info p {
-    display: none
-}
 
 .block-advantages-item:hover {
 	border: 1px solid var(--color-orange);
 }
 
-.block-advantages-item:hover p{
-	display: flex;
-    height: 100%;
-}
 
 
 
@@ -380,7 +417,7 @@ p {
 	justify-content: space-between;
 }
 
-.title--24:after {
+.block-advantages-item:after {
     content: '';
     background-image: url(/assets/img/download-grey.svg);
     width: 22px;
@@ -406,12 +443,259 @@ p {
 	display: grid;
 	color: #fff;
 	padding: 16px 20px;
-	gap: 90px;
+	gap: 16px;
 	grid-template-columns: 135px 1fr;
 	border-bottom: 1px solid #2C2E32;
+    position: relative;
 }          
+
+.block_features_item p::after {
+	content: '';
+	background-image: url(/assets/img/download-grey.svg);
+	width: 22px;
+	height: 22px;
+	display: flex;
+	position: absolute;
+	top: 16px;
+	right: 0;
+}
 
 .block_features {
 	display: flex;
 	gap: 18px;
 }
+
+#modification {
+    padding-top: 128px;
+    padding-bottom: 128px;
+}  
+
+/* Табы */
+/* Базовый контейнер табов */
+.tabs {
+    min-width: 320px;
+    /* max-width: 800px; */
+    padding: 0px;
+    margin: 0 auto;
+    margin-top:24px
+}
+/* Стили секций с содержанием */
+.tabs>section {
+    display: none;
+    padding: 15px;
+    }
+.tabs>section>p {
+    margin: 0 0 5px;
+    line-height: 1.5;
+    color: #383838;
+/* прикрутим анимацию */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+
+@-webkit-keyframes fadeIn {
+    from {
+            opacity: 0;
+    }
+    to {
+            opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+            opacity: 0;
+    }
+    to {
+            opacity: 1;
+    }
+}
+/* Прячем чекбоксы */
+.tabs>input {
+    display: none;
+    position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+    display: inline-block;
+    padding: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    /* border: 0px solid #ddd; */
+    border: 1px solid var(--border-grey);
+    border-width: 1px 1px 1px 1px;
+    border-radius: 3px 3px 0 0;
+    font-family: 'Tektur', sans-serif;
+    line-height: 21.6px;
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+
+.tabs>label:hover {
+    cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+    border: 1px solid var(--color-orange);
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
+display: block;
+}
+/* Убираем текст с переключателей 
+* и оставляем иконки на малых экранах
+*/
+
+@media screen and (max-width: 680px) {
+    .tabs>label {
+            font-size: 0;
+    }
+    .tabs>label:before {
+            margin: 0;
+            font-size: 18px;
+    }
+}
+/* Изменяем внутренние отступы 
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+    .tabs>label {
+            padding: 15px;
+    }
+}
+
+.orange {
+	color: var(--color-orange);
+	font-size: 24px;
+	text-align: center;
+}
+
+.tabs .title--32-border{
+    margin-top: 64px;
+}
+
+.tab-blocks {
+    background-color: var(--bck-grey);
+    padding: 32px;
+    width: 100%;
+    max-width: 670px;
+}
+
+.content-info-tab {
+    margin-bottom: 130px;
+}
+
+.content-info-tab-item {
+	display: grid;
+	gap: 20px;
+	padding: 20px 0;
+	grid-template-columns: 210px 1fr;
+}
+
+.content-info-tab-item:nth-child(2) {
+	border-bottom: 1px solid var(--border-grey);
+}
+
+.footer {
+    background-image: url(/assets/img/footer-bck.png);
+}
+
+.footer {
+	background-image: url(/assets/img/footer-bck.png);
+	height: 100px;
+	width: 100%;
+	display: flex;
+	accent-color: ;
+	background-size: cover;
+	width: 100%;
+	min-height: 738px;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+}
+
+.form-call {
+    background-color: var(--bck-grey);
+}
+
+.form-footer  {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-footer input {
+    border-bottom: 1px solid #595B63;
+    color: #595B63;
+    padding: 10px;
+}
+
+.footer-block {
+	display: flex;
+	justify-content: space-around;
+}
+
+.form-call .btn {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.form-call .btn a {
+    justify-content: center;
+    width: 100%;
+}
+
+.btn a:hover {
+	background: var(--color-orange);
+    transition: all 0.7s ease;
+}
+
+.link-footer a {
+	color: var(--color-orange);
+	font-weight: 600;
+	line-height: 24px;
+	font-size: 20px;
+}
+
+.link-footer {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Tektur', sans-serif;
+	gap: 8px;
+}
+
+.information-footer {
+	display: flex;
+	flex-direction: column;
+	line-height: 24px;
+	gap: 16px;
+}
+
+.information-footer p:nth-child(4){
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-block-item {
+	padding: 32px;
+	width: 100%;
+	max-width: 440px;
+	height: 388px;
+}
+
+
+
+
+
+
