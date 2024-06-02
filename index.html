@@ -383,6 +383,99 @@
                 </div>
             </div>
         </section>
+        <section id="smi_about">
+            <div class="container">
+                <h2 class="title--32-border">СМИ о нас</h2>
+                <div class="article-block">
+                    <div class="article-block-item">
+                        <img src="/assets/img/news1.png" alt="">
+                        <div class="info-about-article">
+                            <span class="title--24">PICAR: новое поколение горно-шахтных машин</span>
+                            <p>DPROM.ONLINE - отраслевой портал для руководителей и специалистов в области разведки, добычи и переработки полезных ископаемых</p>
+                            <span class="text-grey">25.05.2023</span>
+                            
+                        </div>
+                        <div class="link_article_read">
+                            <a href="#">Читать статью</a>
+                        </div>
+                    </div>
+                        
+                    <div class="article-block-item">
+                        <img src="/assets/img/news2.png" alt="">
+                        <div class="info-about-article">
+                             <span class="title--24">Российско-казахстанское партнерство: продолжение будет?</span>
+                        <p>Журнал «Добывающая промышленность». - 2022.- № 6 (36)</p>
+                        <span class="text-grey">25.05.2023</span>
+                        
+                        </div>
+                        <div class="link_article_read">
+                            <a href="#">Читать статью</a>
+                        </div>
+                    </div>
+                    <div class="article-block-item">
+                        <img src="/assets/img/news3.png" alt="">
+                        <div class="info-about-article">
+                                <span class="title--24">MiningWorld Russia — 2022: изучаем экспозицию</span>
+                        <p>DPROM.ONLINE - отраслевой портал для руководителей и специалистов в области разведки, добычи и переработки полезных ископаемыхv</p>
+                        <span class="text-grey">25.05.2023</span>
+                        
+                        </div>
+                        <div class="link_article_read">
+                            <a href="#">Читать статью</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="media">
+            <div class="container">
+                <h2 class="title--32-border">Медиа</h2>
+                <div id="owl-carousel" class="owl-carousel">
+                    <div class="item">
+                        <img src="assets/img/slider-item1.png" alt="Image 1">
+                        <img src="assets/img/slider-item2.png" alt="Image 2">
+                        <img src="assets/img/slider-item3.png" alt="Image 3">
+                        <img src="assets/img/slider-item4.png" alt="Image 4">
+                        <img src="assets/img/slider-item5.png" alt="Image 5">
+                        <img src="assets/img/slider-item6.png" alt="Image 6">
+                        <img src="assets/img/slider-item7.png" alt="Image 7">
+                        <img src="assets/img/slider-item8.png" alt="Image 8">
+                        <img src="assets/img/slider-item9.png" alt="Image 9">
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/slider-item1.png" alt="Image 1">
+                        <img src="assets/img/slider-item2.png" alt="Image 2">
+                        <img src="assets/img/slider-item3.png" alt="Image 3">
+                        <img src="assets/img/slider-item4.png" alt="Image 4">
+                        <img src="assets/img/slider-item5.png" alt="Image 5">
+                        <img src="assets/img/slider-item6.png" alt="Image 6">
+                        <img src="assets/img/slider-item7.png" alt="Image 7">
+                        <img src="assets/img/slider-item8.png" alt="Image 8">
+                        <img src="assets/img/slider-item9.png" alt="Image 9">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="news">
+            <div class="container">
+                <h2 class="title--32-border">Новости</h2>
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                    <div class="item"><img src="/assets/img/3.png" alt=""></div>
+                </div>
+            </div>
+        </section>
         <footer class="footer">
             <div class="container">
                 <div class="footer-block">
@@ -415,13 +508,23 @@
                     </div>
                 </div>
             </div>
-            <script>
-                
-            </script>
-        </footer>
-        <!-- <script src="assets/js/swiper-element-bundle.min.js"></script>
-        <script src="/assets/js/swiper-bundle.min.js"></script> -->
 
+        </footer>
+        <script>
+            $(document).ready(function() {
+                $("#owl-carousel2").owlCarousel({
+                    items: 3,              
+                    loop: true,            
+                    nav: true,             
+                    dots: true,            
+                    autoplay: true,        
+                    autoplayTimeout: 5000, 
+                    navText: [
+                     
+                    ]    
+                });
+            });
+        </script>
         <script>
             $('.owl-carousel').owlCarousel({
                 items:1,
@@ -445,7 +548,34 @@
                     }
                 }
             })
+
         </script>
+
+<script>
+    $('.owl-carousel2').owlCarousel({
+        items:3,
+        loop:true,
+        margin:10,
+        nav:true,
+        dots: true,
+        navText: [
+            '<img src="/assets/img/arrow.png" class="custom-nav-icon" alt="Prev">',
+            '<img src="/assets/img/arrow-right.png" class="custom-nav-icon" alt="Next">'
+        ],
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:3
+            }
+        }
+    })
+
+</script>
 
         
     </main>
