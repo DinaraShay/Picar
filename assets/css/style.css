@@ -313,9 +313,6 @@ p {
     display: flex;
 }
 
-
-
-
 .title--32-border-2 {
 	font-size: 32px;
 	font-weight: 500;
@@ -405,11 +402,9 @@ p {
 }
 
 .number {
-    /* color: var(--color-orange); */
     font-size: 32px;
     font-weight: 500;
     line-height: 38.4px;
-    /* text-stroke: 1px solid var(--color-orange); */
     -webkit-text-stroke: 1px var(--color-orange);
     font-family: 'Tektur', sans-serif;
 }
@@ -478,7 +473,6 @@ p {
 }  
 
 #smi_about {
-    /* padding-top: 128px; */
     padding-bottom: 128px;
 }
 
@@ -492,8 +486,11 @@ p {
     padding-top: 128px;
     padding-bottom: 128px;
 }
-/* Табы */
-/* Базовый контейнер табов */
+
+#news .owl-dots .owl-dot {
+	width: 23px;
+}
+
 .tabs {
     min-width: 320px;
     /* max-width: 800px; */
@@ -501,7 +498,7 @@ p {
     margin: 0 auto;
     margin-top:24px
 }
-/* Стили секций с содержанием */
+
 .tabs>section {
     display: none;
     padding: 15px;
@@ -510,7 +507,7 @@ p {
     margin: 0 0 5px;
     line-height: 1.5;
     color: #383838;
-/* прикрутим анимацию */
+
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -518,7 +515,6 @@ p {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
-/* Описываем анимацию свойства opacity */
 
 @-webkit-keyframes fadeIn {
     from {
@@ -536,12 +532,10 @@ p {
             opacity: 1;
     }
 }
-/* Прячем чекбоксы */
 .tabs>input {
     display: none;
     position: absolute;
 }
-/* Стили переключателей вкладок (табов) */
 .tabs>label {
     display: inline-block;
     padding: 32px;
@@ -556,22 +550,16 @@ p {
     line-height: 21.6px;
 }
 
-/* Изменения стиля переключателей вкладок при наведении */
 
 .tabs>label:hover {
     cursor: pointer;
 }
-/* Стили для активной вкладки */
 .tabs>input:checked+label {
     border: 1px solid var(--color-orange);
 }
-/* Активация секций с помощью псевдокласса :checked */
 #tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
 display: block;
 }
-/* Убираем текст с переключателей 
-* и оставляем иконки на малых экранах
-*/
 
 @media screen and (max-width: 680px) {
     .tabs>label {
@@ -582,9 +570,8 @@ display: block;
             font-size: 18px;
     }
 }
-/* Изменяем внутренние отступы 
-*  переключателей для малых экранов
-*/
+
+
 @media screen and (max-width: 400px) {
     .tabs>label {
             padding: 15px;
@@ -635,7 +622,6 @@ display: block;
 	background-repeat: no-repeat;
 	display: flex;
 	align-items: center;
-    /* background-attachment:fixed; */
 }
 
 .form-call {
@@ -717,10 +703,11 @@ display: block;
 	width: 50% !important;
 }
 
+#slider1 .owl-dots .owl-dot {
+	width: 0;
+}
+
 .owl-nav {
-	/* display: flex;
-	justify-content: right;
-	width: max-content; */
 	float: right;
 	margin-top: 27px;
 }
@@ -741,7 +728,6 @@ display: block;
 
   .owl-dots:first-child {
     color: var(--color-orange);
-
 }
 
   .owl-dots:after {
@@ -751,16 +737,22 @@ display: block;
     font-size: 16px;
     font-family: 'Onest', sans-serif;
   }
+
   .owl-dot {
     display: inline-block;
     counter-increment: slides-num;    
     margin-right: 3px;
     font-family: 'Onest', sans-serif;
-
   }
+
+  .owl-dots .owl-dot {
+	width: 12px;
+}
+
   .owl-dot span {
     display: none;
   }
+
   .owl-dot.active:before {
     content: counter(slides-num) "  /";
     display: inline-block;
@@ -850,7 +842,7 @@ display: block;
     font-weight: 500;
 }
 
-.owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled {
+#news .owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled {
 	display: flex !important;
 }
 
