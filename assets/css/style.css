@@ -478,7 +478,7 @@ p {
 }  
 
 #smi_about {
-    padding-top: 128px;
+    /* padding-top: 128px; */
     padding-bottom: 128px;
 }
 
@@ -713,15 +713,14 @@ display: block;
 	height: 388px;
 }
 
-.owl-carousel {
-	display: none;
+#slider1 {
 	width: 50% !important;
 }
 
 .owl-nav {
-	display: flex;
+	/* display: flex;
 	justify-content: right;
-	width: max-content;
+	width: max-content; */
 	float: right;
 	margin-top: 27px;
 }
@@ -783,7 +782,6 @@ display: block;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 20px;
-	margin-top: 80px;
 }
 
 .article-block img {
@@ -793,11 +791,13 @@ display: block;
 }
 
 .link_article_read a {
-    color: #fff;
-    font-family: 'Tektur', sans-serif;
-    font-size: 16px;
-    line-height: 19.2px;
-    display: flex;
+	color: #fff;
+	font-family: 'Tektur', sans-serif;
+	font-size: 16px;
+	line-height: 19.2px;
+	display: flex;
+	align-items: end;
+	gap: 10px;
 }
 
 .article-block-item {
@@ -821,23 +821,139 @@ display: block;
     height: 16px;
 }
 
-#media .item {
+#media .item-carusel {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
-.item {
+.item-carusel {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.item img {
-    width: calc(33.33% - 10px); /* 3 изображения в ряд с промежутком */
-    margin-bottom: 15px;
-}
+
 .owl-carousel .owl-item {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.slide-counter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5rem; /* Adjust position as needed */
+    color: #595B63;
+    font-size: 16px;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
+}
+
+.owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled {
+	display: flex !important;
+}
+
+#slider6 {
+    margin-top: 32px;
+}
+
+.block-smi {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+    margin-top: 64px;
+}
+
+.video-smi-item iframe {
+    width: 670px;
+    height: 402px;
+    position: absolute;
+    top: 0;
+}
+
+.video-container {
+	position: relative;
+    width: 680px;
+    height: 402px;
+}
+
+.text-on-video {
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+
+.video-preview {
+	position: relative;
+	width: 670px;
+	height: 402px;
+}
+
+.video-preview-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px; /* Размер иконки воспроизведения */
+    height: 80px;
+    background-image: url('/assets/img/youtube.svg'); /* Замените на путь к вашей иконке воспроизведения */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+
+.video-iframe {
+    display: none; /* Изначально скрываем iframe */
+}
+
+.title--16 {
+    font-size: 16px;
+    line-height: 19.2px;
+    font-family: 'Tektur', sans-serif;
+}
+
+
+.owl-stage .owl-item {
+    position: relative;
+}
+
+.owl-stage .owl-item:not(.active)::before,
+.owl-stage .owl-item:not(.active)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080; 
+    z-index: 1; 
+}
+
+.owl-stage .owl-item:not(.active)::after {
+    left: auto;
+    right: 0;
+}
+
+.container-media {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
